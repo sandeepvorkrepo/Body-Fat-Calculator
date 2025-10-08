@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Body Fat Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Body Fat Calculator</h1>
+
+
+        <form id="bf-form" class="card">
+            <div class="row">
+                <label>Sex</label>
+                <div class="control-inline">
+                    <label><input type="radio" name="sex" value="male" checked> Male</label>
+                    <label><input type="radio" name="sex" value="female"> Female</label>
+                </div>
+            </div>
+            <div class="row">
+                <label for="age">Age</label>
+                <input id="age" type="number" min="10" max="120" value="30">
+            </div>
+
+
+            <div class="row">
+                <label for="height">Height (cm)</label>
+                <input id="height" type="number" min="50" max="300" value="170">
+            </div>
+
+
+            <div class="row">
+                <label for="weight">Weight (kg)</label>
+                <input id="weight" type="number" min="20" max="500" value="70">
+            </div>
+
+
+            <div class="row">
+                <label for="neck">Neck circumference (cm)</label>
+                <input id="neck" type="number" min="10" max="100" value="38">
+            </div>
+
+
+            <div class="row">
+                <label for="waist">Waist circumference (cm)</label>
+                <input id="waist" type="number" min="20" max="300" value="85">
+            </div>
+
+
+            <div class="row" id="hip-row" style="display:none;">
+                <label for="hip">Hip circumference (cm) — female only</label>
+                <input id="hip" type="number" min="20" max="300" value="96">
+            </div>
+
+
+            <div class="actions">
+                <button type="button" id="calc">Calculate</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </form>
+
+
+        <section id="results" class="card results" aria-live="polite" style="display:none;">
+            <h2>Results</h2>
+            <div class="result-row"><strong>Body Fat %:</strong> <span id="bf-percent">—</span></div>
+            <div class="result-row"><strong>Category:</strong> <span id="bf-category">—</span></div>
+            <div class="result-row"><strong>BMI:</strong> <span id="bmi">—</span></div>
+            <div class="result-row"><strong>Lean Mass (kg):</strong> <span id="lean-mass">—</span></div>
+
+
+            <div class="result-actions">
+                <button id="copy">Copy result</button>
+                <button id="save">Download result</button>
+            </div>
+        </section>
+
+
+        <footer class="muted">Using the US Navy method for body fat estimation. This is an estimate — consult a
+            professional for
+            clinical measurement.</footer>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
